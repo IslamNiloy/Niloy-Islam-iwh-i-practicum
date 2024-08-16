@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='./public/css/style.css')
+  body
+    h1= title
+    a(href='/') Return to the homepage
+    form(action='/update-cobj', method='post')
+      label(for='model') Model:
+      input(type='number', id='model', name='model', required)
+      label(for='company') Company:
+      input(type='text', id='company', name='company', required)
+      label(for='type') Type:
+      input(type='text', id='type', name='type', required)
+      button(type='submit') Submit

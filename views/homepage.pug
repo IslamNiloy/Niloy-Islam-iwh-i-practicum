@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='./public/css/style.css')
+  body
+    h1= title
+    a(href='/update-cobj') Add to this table
+    if records.length > 0
+      table
+        thead
+          tr
+            th Object ID
+            th Created Date
+            th Last Modified Date
+        tbody
+          each record in records
+            tr
+              td= record.properties.hs_object_id
+              td= new Date(record.properties.hs_createdate).toLocaleString()
+              td= new Date(record.properties.hs_lastmodifieddate).toLocaleString()
+    else
+      p No records found.
